@@ -15,7 +15,7 @@ public class MyLoggingAspect {
     @Before("logIt()")
     public void doMyLogging(){
 
-        logger.warn("This bitch is working! :)");
+        logger.warn("This AOP Logging is working! :)");
 
     }
 
