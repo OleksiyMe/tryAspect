@@ -1,6 +1,7 @@
-package com.oleksiy.playWithConsoleLogging;
+package com.oleksiy;
 
 import com.oleksiy.annotation.MyLoggingAnnotation;
+
 
 public class SimpleLoggingTest {
     public static void main(String[] args) {
@@ -12,6 +13,5 @@ public class SimpleLoggingTest {
     private static String printSomething(String s) {
         return s;
     }
-
 
 }
