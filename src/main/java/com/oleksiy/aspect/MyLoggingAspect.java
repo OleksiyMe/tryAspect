@@ -1,8 +1,6 @@
 package com.oleksiy.aspect;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,7 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyLoggingAspect {
     Logger logger= LoggerFactory.getLogger(MyLoggingAspect.class);
-    @Pointcut("@annotation(com.oleksiy.annotation.MyLoggingAnnotation )")
+    //@Pointcut("@annotation(com.oleksiy.annotation.MyLoggingAnnotation)")
+    //@Pointcut("execution(* com.oleksiy.tryaspect.Runner.printSomething(..))")
+    @Pointcut("execution(* com.oleksiy.tryaspect.Runner.*(..))")
     public void logIt(){};
 
     @Before("logIt()")
@@ -20,7 +20,6 @@ public class MyLoggingAspect {
         logger.warn("This AOP Logging is working! :)");
 
     }
-
 
 
 }
