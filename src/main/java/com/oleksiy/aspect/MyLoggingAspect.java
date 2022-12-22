@@ -16,9 +16,9 @@ public class MyLoggingAspect {
     public void logIt(){};
 
     @Before("logIt()")
-    public void doMyLogging(){
+    public void doMyLogging(JoinPoint joinPoint){
 
-        logger.warn("This AOP Logging is working! :)");
+        logger.warn("This AOP Logging is working for "+joinPoint.getSignature().toShortString());
     }
     @After("logIt()")
     public void doMyLoggingAfter(JoinPoint joinPoint){
